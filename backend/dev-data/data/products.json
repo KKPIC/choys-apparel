@@ -1,0 +1,497 @@
+[
+  {
+    "_id": "5c8a1d5b0170b214360dc057",
+    "name": "Beach boonie hat",
+    "description": "Blue beach style boonie hat for woman",
+    "price": 500,
+    "images": [
+      "beach-color-boonie-hat.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Head",
+    "otherTags": ["Beach", "Boonie hat", "Blue", "White", "Hat"]
+  },
+  {
+    "_id": "5c8a1dfa2f8fb814b17fa181",
+    "name": "black-boonie-hat",
+    "description": "Black Boonie hat with brown tie for women fashion",
+    "price": 250,
+    "images": [
+      "black-boonie-hat.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Head",
+    "otherTags": ["Black", "Boonie hat", "Hat"]
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa172",
+    "name": "UN black cap",
+    "description": "Black cap with UN design",
+    "price": 800,
+    "images": [
+      "black-cap-2.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Head",
+    "otherTags": ["Black", "UN", "New york", "Cap"]
+  },
+  {
+    "_id": "5c8a1ec62f8fb814b56fa117",
+    "name": "Black cap Jordan",
+    "description": "Jordan black cap",
+    "price": 650,
+    "images": [
+      "black-cap-3.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Head",
+    "otherTags": ["Black", "Jordan", "Minimal", "Cap"]
+  },
+  {
+    "_id": "5c8a1f172f8fb814b56fa184",
+    "name": "Black cap plain",
+    "description": "Plain black cap",
+    "price": 250,
+    "images": [
+      "black-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Head",
+    "otherTags": ["Black", "Plain", "Minimal", "Cap"]
+  },
+  {
+    "_id": "5c8a1f4e2f8fb177b56fa185",
+    "name": "Black fedora plain",
+    "description": "Plain black Fedora",
+    "price": 999,
+    "images": [
+      "black-fedora.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Head",
+    "otherTags": ["Black", "Fedora", "Minimal", "Cap"]
+  },
+  {
+    "_id": "5c8a1f4e2f8fb122b56fa185",
+    "name": "Brown boonie hat",
+    "description": "Brown boonie hat for women",
+    "price": 1299,
+    "images": [
+      "brown-boonie-hat.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Head",
+    "otherTags": ["Brown", "Boonie Hat", "Minimal"]
+  },
+  {
+    "_id": "5c8a201e2f8fb814b23fa186",
+    "name": "Denim pants",
+    "description": "Unisex Denim pants",
+    "price": 500,
+    "images": [
+      "denim-pants.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Legs",
+    "otherTags": ["Denim", "Pants", "Jeans"]
+  },
+  {
+    "_id": "5c8a66d32f8fb814b56fa187",
+    "name": "Blue nike",
+    "description": "Blue nike",
+    "price": 2000,
+    "images": [
+      "nike-3.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Feet",
+    "otherTags": ["Blue", "Nike", "Shoes"]
+  },
+  {
+    "_id": "5c8a20d32f8fb814b56fa557",
+    "name": "Casual fedora",
+    "description": "Bruno mars' fedora",
+    "price": 550,
+    "images": [
+      "plain-fedora.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Fedora", "Brown", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b56fa557",
+    "name": "Wedding dress",
+    "description": "Casual wedding dress for bride",
+    "price": 7000,
+    "images": [
+      "wedding-dress.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Body",
+    "otherTags": ["White", "Wedding", "Bride", "Dress"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa557",
+    "name": "White cap plain",
+    "description": "Plain white cap for everyone",
+    "price": 150,
+    "images": [
+      "white-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["White", "Cap", "Headwear", "Plain"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa200",
+    "name": "Assorted nike",
+    "description": "Asorted color of nike",
+    "price": 1000,
+    "images": [
+      "assorted-nike.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Feet",
+    "otherTags": ["Shoes", "Feetwear", "Nike"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa201",
+    "name": "Yellow shoes",
+    "description": "Yellow shoe boots",
+    "price": 1500,
+    "images": [
+      "yellow-shoes.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Feet",
+    "otherTags": ["Shoes", "Feetwear", "Yellow", "Boots"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa202",
+    "name": "White shoes",
+    "description": "White shoes for jogging",
+    "price": 2000,
+    "images": [
+      "white-shoes-2.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Feet",
+    "otherTags": ["Shoes", "Feetwear", "White"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa203",
+    "name": "Beige shorts",
+    "description": "Beige shorts for men",
+    "price": 800,
+    "images": [
+      "beige-shorts.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Legs",
+    "otherTags": ["Shorts", "Beige"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa204",
+    "name": "Blue navy pants",
+    "description": "Blue navy pants for women",
+    "price": 800,
+    "images": [
+      "female-jeans.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Legs",
+    "otherTags": ["Pants", "Blue", "Navy"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa205",
+    "name": "Assorted Jeans",
+    "description": "Assorted Jeans for men",
+    "price": 1200,
+    "images": [
+      "assorted-jeans.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Legs",
+    "otherTags": ["Jeans", "Assorted", "Black", "Navy", "Denim"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa206",
+    "name": "Yellow Jacket",
+    "description": "Yellow jacket with hoodie",
+    "price": 1999,
+    "images": [
+      "yellow-jacket.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Body",
+    "otherTags": ["Jacket", "Yellow", "Mustard", "Corn", "Hoodie"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa207",
+    "name": "Semi Varsity Jacket",
+    "description": "Semi varsity jacket that does not have a thick cloth inside and made out of cotton and fiber by wool of the chinese farms",
+    "price": 799,
+    "images": [
+      "semi-varsity-jacket.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Body",
+    "otherTags": ["Jacket", "Varsity", "Blue", "Navy"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa208",
+    "name": "Black leather jacket",
+    "description": "Black leather jacket made from canada that can stand cold temparature and good for cold weather codition places. This leather jacket is mainly made for women fashion alone that can be use as a both fashion and cold protection",
+    "price": 12000,
+    "images": [
+      "black-leather-jacket.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Body",
+    "otherTags": ["Jacket", "Leather", "Black", "Cold"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa209",
+    "name": "Lakers varsity jacket",
+    "description": "Lakers varsity jacker limited edition.",
+    "price": 20000,
+    "images": [
+      "lakers-varsity-jacket.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Body",
+    "otherTags": ["Jacket", "Varsity", "Lakers", "Basketball"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa210",
+    "name": "Stripes dress",
+    "description": "Black and white stripes intersection for women dress.",
+    "price": 700,
+    "images": [
+      "black-and-white-stripes.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Body",
+    "otherTags": ["Dress", "Stripes", "Black", "White"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa211",
+    "name": "White Kiikii T-shirt",
+    "description": "White kikii T-shirt made in Japan.",
+    "price": 10000,
+    "images": [
+      "kiikii-original.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Body",
+    "otherTags": ["T-shirt", "White", "Kiikii", "cat"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa212",
+    "name": "Black jeans",
+    "description": "Black jeans for men yeah",
+    "price": 550,
+    "images": [
+      "black-jeans.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Men",
+    "bodyTag": "Legs",
+    "otherTags": ["Jeans", "Black"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa213",
+    "name": "Blue cap",
+    "description": "Blue cap apparel",
+    "price": 500,
+    "images": [
+      "blue-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Blue", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa214",
+    "name": "Blue Boonie Hat",
+    "description": "Blue boonie hat apparel",
+    "price": 600,
+    "images": [
+      "blue-boonie-hat.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Boonie hat", "Blue", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa215",
+    "name": "Orange cap",
+    "description": "Orange cap apparel",
+    "price": 450,
+    "images": [
+      "orange-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Orange", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa216",
+    "name": "Violet cap",
+    "description": "Violet cap apparel",
+    "price": 450,
+    "images": [
+      "violet-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Violet", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa217",
+    "name": "Beige cap",
+    "description": "Beige cap apparel",
+    "price": 450,
+    "images": [
+      "beige-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Beige", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa218",
+    "name": "Red cap",
+    "description": "Green cap apparel",
+    "price": 450,
+    "images": [
+      "green-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Green", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa219",
+    "name": "Pink cowboy hat",
+    "description": "Pink cowboy hat for women",
+    "price": 700,
+    "images": [
+      "pink-cowboy-hat.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Women",
+    "bodyTag": "Head",
+    "otherTags": ["Hat", "Cowgirl", "Pink", "Cowboy", "Barbie", "Headwear"]
+  },
+  {
+    "_id": "5c8a20d66f8fb814b22fa220",
+    "name": "Red cap",
+    "description": "Red cap apparel",
+    "price": 450,
+    "images": [
+      "red-cap.jpg",
+      "test_image_1.png",
+      "test_image_2.png",
+      "test_image_3.png"
+    ],
+    "genderTag": "Unisex",
+    "bodyTag": "Head",
+    "otherTags": ["Cap", "Red", "Headwear"]
+  }
+]
