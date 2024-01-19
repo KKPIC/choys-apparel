@@ -29,14 +29,14 @@ function AddImagesComponentUi({ onSelectFile, selectedImages, onDeleteImage }) {
     <StyledAddImages>
       {selectedImages.length < 4 && (
         <>
-          <StyledLabel htmlFor="firstImage">
+          <StyledLabel htmlFor="images">
             <FaPlus size={19} />
             <span style={{ fontSize: "8px" }}>up to 4 images</span>
           </StyledLabel>
           <AddImageInput
             type="file"
             name="images"
-            id="firstImage"
+            id="images"
             onChange={onSelectFile}
             multiple
             accept="image/png, image/jpeg, image/webp"

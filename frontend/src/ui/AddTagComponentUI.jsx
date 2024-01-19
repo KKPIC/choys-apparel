@@ -36,22 +36,27 @@ const StyledAddButton = styled.div`
   right: -41%;
   top: 6%;
 `;
-function AddTagComponentUI({ tags, onAddtags, onDeleteTag }) {
+function AddTagComponentUI({
+  tags,
+  onAddtags,
+  onDeleteTag,
+  onSetTagsOnlyNames,
+}) {
   const [tagName, setTagName] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!tagName) return;
-    const newTag = { tagName, id: Date.now() };
-    onAddtags(newTag);
+    const newTag = { tagName };
 
+    onAddtags(tagName);
     setTagName("");
   }
   return (
     <StyledTagLists>
-      {tags.map((tag) => (
-        <Tag tag={tag} key={tag.id} onDeleteTag={onDeleteTag} />
+      {tags.map((tag, index) => (
+        <Tag tag={tag} key={index} onDeleteTag={onDeleteTag} />
       ))}
 
       {/* <StyledTag>

@@ -19,10 +19,11 @@ const DeleteButton = styled.div`
   float: right;
 `;
 function Tag({ tag, onDeleteTag }) {
+  // console.log(tag);
   return (
     <StyledTag>
-      <TagName>{tag.tagName}</TagName>
-      <DeleteButton onClick={() => onDeleteTag(tag.id)}>
+      <TagName>{tag}</TagName>
+      <DeleteButton onClick={() => onDeleteTag(tag)}>
         <IoClose size={19} />
       </DeleteButton>
     </StyledTag>

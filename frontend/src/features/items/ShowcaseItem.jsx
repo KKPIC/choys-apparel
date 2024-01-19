@@ -53,7 +53,10 @@ function ShowcaseItem({
     //   </StyledDiv>
     // </StyledList>
     <StyledList onClick={() => navigate(`/showcase/${productId}`)}>
-      <StyledImg src={`products/${images[0]}`} alt={"Loading"} />
+      <StyledImg
+        src={`http://127.0.0.1:3000/products/${images[0]}`}
+        alt={"Loading"}
+      />
       <StyledProductTitle>{name}</StyledProductTitle>
       <StyledDiv>
         <p>${price}</p>

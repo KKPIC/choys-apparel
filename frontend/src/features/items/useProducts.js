@@ -26,7 +26,7 @@ export function useProducts() {
     selectedParams = defaultParams;
   }
 
-  console.log(page);
+  // console.log(page);
   // console.log(Math.ceil(selectedCount / 10));
   // console.log(selectedParams);
   useEffect(() => {

@@ -16,7 +16,7 @@ router
   .route("/")
   .get(getAllProducts)
   .post(uploadProductImages, resizeProductImages, createProduct);
-
+//uploadProductImages, resizeProductImages,
 router.route("/head-apparel").get(getAllHead);
 
 router.route("/:id").get(getProduct).patch(updateProduct).delete(deleteProduct);

@@ -4,6 +4,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import styled from "styled-components";
 import { useState } from "react";
+// import SmallImageBox from "./SmallImageBox";
 
 const SmallImageContainer = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const ImageBox = styled.img`
   object-position: center;
 `;
 
-const image = `/products/Image_test.png`;
+const image = `http://127.0.0.1:3000/products/test_image_1}`;
 
 function ItemImageBox({ name, images }) {
   const [step, setStep] = useState(1);
@@ -35,7 +36,6 @@ function ItemImageBox({ name, images }) {
   function handlePrevious() {
     if (step > 1) setStep((s) => s - 1);
     if (step === 0) setStep(1);
-    console.log("step", step);
   }
   function handleNext() {
     if (step < 4) setStep((s) => s + 1);
@@ -47,7 +47,11 @@ function ItemImageBox({ name, images }) {
   return (
     <>
       <ItemName>{name}</ItemName>
-      <ImageBox src={images ? `/products/${images[step - 1]}` : image} />
+      <ImageBox
+        src={
+          images ? `http://127.0.0.1:3000/products/${images[step - 1]}` : image
+        }
+      />
       <SmallImageContainer>
         <ButtonIcon
           onClick={handlePrevious}
@@ -55,6 +59,14 @@ function ItemImageBox({ name, images }) {
         >
           <FaChevronLeft />
         </ButtonIcon>
+        {/* {images?.map((image, index) => (
+          <SmallImageBox
+            onChangeImage={handleFirstSmallImage}
+            image={image}
+            step={step}
+            key={index}
+          />
+        ))} */}
         <SmallImageBox
           onClick={() => handleFirstSmallImage(1)}
           style={
@@ -62,7 +74,7 @@ function ItemImageBox({ name, images }) {
               ? { width: "60px", height: "60px", border: "2px solid yellow" }
               : null
           }
-          src={images ? `/products/${images[0]}` : image}
+          src={images ? `http://127.0.0.1:3000/products/${images[0]}` : image}
         />
         <SmallImageBox
           onClick={() => handleFirstSmallImage(2)}
@@ -71,7 +83,7 @@ function ItemImageBox({ name, images }) {
               ? { width: "60px", height: "60px", border: "2px solid yellow" }
               : null
           }
-          src={images ? `/products/${images[1]}` : image}
+          src={images ? `http://127.0.0.1:3000/products/${images[1]}` : image}
         />
         <SmallImageBox
           onClick={() => handleFirstSmallImage(3)}
@@ -80,7 +92,7 @@ function ItemImageBox({ name, images }) {
               ? { width: "60px", height: "60px", border: "2px solid yellow" }
               : null
           }
-          src={images ? `/products/${images[2]}` : image}
+          src={images ? `http://127.0.0.1:3000/products/${images[2]}` : image}
         />
         <SmallImageBox
           onClick={() => handleFirstSmallImage(4)}
@@ -89,7 +101,7 @@ function ItemImageBox({ name, images }) {
               ? { width: "60px", height: "60px", border: "2px solid yellow" }
               : null
           }
-          src={images ? `/products/${images[3]}` : image}
+          src={images ? `http://127.0.0.1:3000/products/${images[3]}` : image}
         />
         <ButtonIcon onClick={handleNext} disabled={step != 4 ? false : true}>
           <FaChevronRight />

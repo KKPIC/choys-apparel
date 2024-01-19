@@ -7,7 +7,15 @@ const StyledDiv = styled.div`
   border: 1px solid var(--color-grey-300);
   position: relative;
 `;
-const StyledImg = styled.img``;
+const StyledImg = styled.img`
+  object-fit: cover;
+  object-position: center;
+  height: 69px;
+  width: 69px;
+  border-radius: 1px;
+  border: 1px solid var(--color-grey-300);
+  position: relative;
+`;
 const DeleteButton = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +32,7 @@ const DeleteButton = styled.div`
 function ItemImage({ image, onDeleteImage }) {
   return (
     <StyledDiv>
-      <StyledImg src={`products/${image}`} />
+      <StyledImg src={image} />
       <DeleteButton onClick={() => onDeleteImage(image)}>
         <IoClose size={16} color={"var(--color-red-800)"} />
       </DeleteButton>

@@ -54,10 +54,10 @@ export const resizeProductImages = catchAsync(async (req, res, next) => {
       await sharp(file.buffer)
         .resize(222, 200)
         .toFormat("png")
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/apparel/${filename}`);
+        .jpeg({ quality: 100 })
+        .toFile(`public/products/${filename}`);
       req.body.images.push(filename);
-      console.log(req.body);
+      console.log(file.buffer);
     })
   );
   next();
