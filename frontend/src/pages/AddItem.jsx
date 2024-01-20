@@ -99,7 +99,13 @@ function AddItem() {
         />
       </FormRow>
       <FormRow label="Description" error={errors?.name?.message}>
-        <Textarea type="text" id="description" {...register("description")} />
+        <Textarea
+          type="text"
+          id="description"
+          {...register("description", {
+            required: "This field is required",
+          })}
+        />
       </FormRow>
       <FormRow label="Price" error={errors?.name?.message}>
         <Input
@@ -110,41 +116,20 @@ function AddItem() {
           })}
         />
       </FormRow>
-      {/* {
-            required: "This field is required",
-            validate: (value) =>
-              value <= getValues().price ||
-              "Discount should be less than regular price",
-          } */}
       <FormRow label="Gender" error={errors?.name?.message}>
         <RealSelect
           id="genderTag"
           onChange={(e) => setGenderValue(e.target.value)}
           {...register("genderTag", {
             required: "This field is required",
+            validate: (value) => value != "select",
           })}
         >
+          <option value="select">Select</option>
           <option value="unisex">Unisex</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </RealSelect>
-        {/* <Select
-          // {...register("genderTag", {
-          //   required: "This field is required",
-          // })}
-          options={[
-            { value: "unisex", label: "Unisex" },
-            {
-              value: "male",
-              label: "Male",
-            },
-
-            {
-              value: "female",
-              label: "Female",
-            },
-          ]}
-        /> */}
       </FormRow>
       <FormRow label="Apparel type" error={errors?.name?.message}>
         <RealSelect
@@ -152,8 +137,10 @@ function AddItem() {
           onChange={(e) => setBodyTagValue(e.target.value)}
           {...register("bodyTag", {
             required: "This field is required",
+            validate: (value) => value != "select",
           })}
         >
+          <option value="select">Select</option>
           <option value="head">Head</option>
           <option value="body">Body</option>
           <option value="legs">Legs</option>

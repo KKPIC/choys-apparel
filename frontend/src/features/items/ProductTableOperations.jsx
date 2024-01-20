@@ -21,6 +21,7 @@ function ProductTableOperations({ handleFilterChange, handlePageChange }) {
         ]}
         handleFilterChange={handleFilterChange}
         handlePageChange={handlePageChange}
+        searchParamsToReset={searchParamsToReset}
       />
     </StyledTableOperations>
   );
