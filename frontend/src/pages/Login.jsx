@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { RiLoginBoxLine } from "react-icons/ri";
-import Header from "../ui/Header";
 import Heading from "../ui/Heading";
 import LoginForm from "../features/authentication/LoginForm";
 import FloatingBackButton from "../ui/MoveBackButton";

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Logout from "./Logout";
 
 const StyledUserProfile = styled.div`
   display: flex;
@@ -23,10 +24,12 @@ const Avatar = styled.img`
   outline: 2px solid var(--color-grey-100);
 `;
 function UserProfile() {
+  const user = localStorage.getItem("token");
   return (
     <StyledUserProfile>
       <Avatar src={"default-user.jpg"} alt="Avatar" />
       <span>Sample name</span>
+      {user && <Logout />}
     </StyledUserProfile>
   );
 }

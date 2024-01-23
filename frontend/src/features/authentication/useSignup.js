@@ -19,7 +19,7 @@ export function useSignup() {
     },
     onError: (err) => {
       console.log("Error", err);
-      toast.error("ERROR");
+      toast.error("The email you input is already used");
     },
   });
   return { signup, isLoading };

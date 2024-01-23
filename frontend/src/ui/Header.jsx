@@ -4,6 +4,7 @@ import AuthMenu from "../features/authentication/AuthMenu";
 import UserProfile from "../features/authentication/UserProfile";
 import ButtonIcon from "./ButtonIcon";
 import { useNavigate } from "react-router-dom";
+
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
   margin-bottom: 50px;
@@ -27,7 +28,6 @@ const SearchBar = styled.input`
 function Header() {
   const navigate = useNavigate();
   const user = localStorage.getItem("token");
-  console.log(user);
   return (
     <StyledHeader>
       <ButtonIcon onClick={() => navigate("/")}>
