@@ -98,7 +98,7 @@ function AddItem() {
           })}
         />
       </FormRow>
-      <FormRow label="Description" error={errors?.name?.message}>
+      <FormRow label="Description" error={errors?.description?.message}>
         <Textarea
           type="text"
           id="description"
@@ -107,7 +107,7 @@ function AddItem() {
           })}
         />
       </FormRow>
-      <FormRow label="Price" error={errors?.name?.message}>
+      <FormRow label="Price" error={errors?.price?.message}>
         <Input
           type="number"
           id="price"
@@ -116,7 +116,7 @@ function AddItem() {
           })}
         />
       </FormRow>
-      <FormRow label="Gender" error={errors?.name?.message}>
+      <FormRow label="Gender" error={errors?.genderTag?.message}>
         <RealSelect
           id="genderTag"
           onChange={(e) => setGenderValue(e.target.value)}
@@ -131,7 +131,7 @@ function AddItem() {
           <option value="female">Female</option>
         </RealSelect>
       </FormRow>
-      <FormRow label="Apparel type" error={errors?.name?.message}>
+      <FormRow label="Apparel type" error={errors?.bodyTag?.message}>
         <RealSelect
           id="bodyTag"
           onChange={(e) => setBodyTagValue(e.target.value)}
@@ -159,7 +159,7 @@ function AddItem() {
           ]}
         /> */}
       </FormRow>
-      <FormRow label="Other tags" error={errors?.name?.message}>
+      <FormRow label="Other tags">
         <AddTagComponentUI
           tags={tags}
           onAddtags={handleAddItems}

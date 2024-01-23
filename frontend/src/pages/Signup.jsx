@@ -14,6 +14,10 @@ const SignupLayout = styled.main`
   gap: 3.2rem;
   background-color: var(--color-grey-50);
 `;
+const Container = styled.div`
+  padding-top: 5rem;
+  text-align: left;
+`;
 function Signup() {
   return (
     <SignupLayout>
@@ -22,7 +26,9 @@ function Signup() {
         <RiLoginBoxFill size={"6rem"} />
       </span>
       <Heading as="h4">Sign up</Heading>
-      <SignupForm />
+      <Container>
+        <SignupForm />
+      </Container>
     </SignupLayout>
   );
 }

@@ -25,7 +25,7 @@ export function useProducts() {
   } else {
     selectedParams = defaultParams;
   }
-
+  // console.log(selectedParams);
   // console.log(page);
   // console.log(Math.ceil(selectedCount / 10));
   // console.log(selectedParams);

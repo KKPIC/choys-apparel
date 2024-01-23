@@ -26,14 +26,16 @@ const SearchBar = styled.input`
 
 function Header() {
   const navigate = useNavigate();
+  const user = localStorage.getItem("token");
+  console.log(user);
   return (
     <StyledHeader>
       <ButtonIcon onClick={() => navigate("/")}>
         <LiaShoppingBagSolid size={"5rem"} style={{ cursor: "pointer" }} />
       </ButtonIcon>
       <SearchBar />
-      <AuthMenu />
-      {/* <UserProfile /> */}
+      {!user && <AuthMenu />}
+      {user && <UserProfile />}
     </StyledHeader>
   );
 }
