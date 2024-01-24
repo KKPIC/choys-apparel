@@ -20,6 +20,8 @@ export async function login({ email, password }) {
     email,
     password,
   });
+  // console.log(data.data.user.role);
+  localStorage.setItem("role", data.data.user.role);
   localStorage.setItem("token", data.data);
   if (error) throw new Error(error.message);
 
