@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Logout from "./Logout";
 import Button from "../../ui/Button";
+import AddItem from "../items/AddItem";
 
 const StyledUserProfile = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ function UserProfile() {
   const role = localStorage.getItem("role");
   return (
     <StyledUserProfile>
-      {role === "admin" && <Button>ADD ITEM</Button>}
+      {role === "admin" && <AddItem />}
       <Avatar src={"default-user.jpg"} alt="Avatar" />
       <span>Sample name</span>
       {user && <Logout />}
