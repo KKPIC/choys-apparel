@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { LiaShoppingBagSolid } from "react-icons/lia";
+
 import AuthMenu from "../features/authentication/AuthMenu";
 import UserProfile from "../features/authentication/UserProfile";
-import ButtonIcon from "./ButtonIcon";
 import { useNavigate } from "react-router-dom";
 
 const StyledHeader = styled.header`
@@ -24,15 +23,19 @@ const SearchBar = styled.input`
   color: inherit;
   width: 50rem;
 `;
-
+const StyledImg = styled.img`
+  width: 200px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+`;
 function Header() {
   const navigate = useNavigate();
   const user = localStorage.getItem("token");
   return (
     <StyledHeader>
-      <ButtonIcon onClick={() => navigate("/")}>
-        <LiaShoppingBagSolid size={"5rem"} style={{ cursor: "pointer" }} />
-      </ButtonIcon>
+      <StyledImg src="Apparel logo.png" onClick={() => navigate("/")} />
+
       <SearchBar />
       {!user && <AuthMenu />}
       {user && <UserProfile />}

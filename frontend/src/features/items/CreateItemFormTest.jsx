@@ -1,25 +1,26 @@
 import styled from "styled-components";
-import Form from "../ui/Form";
-import FormRow from "../ui/FormRow";
-import Input from "../ui/Input";
-import RealSelect from "../ui/RealSelect";
-import Select from "../ui/Select";
-import AddTagComponentUI from "../ui/AddTagComponentUI";
-import AddImagesComponentUI from "../ui/AddImagesComponentUI";
-import Button from "../ui/Button";
+import Form from "../../ui/Form";
+import FormRow from "../../ui/FormRow";
+import Input from "../../ui/Input";
+import RealSelect from "../../ui/RealSelect";
+import Select from "../../ui/Select";
+import AddTagComponentUI from "../../ui/AddTagComponentUI";
+import AddImagesComponentUI from "../../ui/AddImagesComponentUI";
+import Button from "../../ui/Button";
+import Textarea from "../../ui/Textarea";
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Textarea from "../ui/Textarea";
 
-function AddItem() {
+function CreateItemFormTest({ onCloseModal }) {
   const [tags, setTags] = useState([]);
   const [onlyNames, setOnlyNames] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
   const [selectedImagesNames, setSelectedImagesNames] = useState(null);
   const [genderValue, setGenderValue] = useState("unisex");
   const [bodyTagValue, setBodyTagValue] = useState("head");
+
   const { register, handleSubmit, getValues, formState } = useForm();
   const { errors } = formState;
 
@@ -40,6 +41,32 @@ function AddItem() {
     setSelectedImages(selectedImages.filter((e) => e !== image));
   }
 
+  function createItem(
+    name,
+    price,
+    description,
+    genderTag,
+    bodyTag,
+    otherTags,
+    imageArray
+  ) {
+    const formData = new FormData();
+    // console.log(data);
+    // console.log(formData);
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("description", description);
+    formData.append("genderTag", genderTag);
+    formData.append("bodyTag", bodyTag);
+    formData.append("otherTags", otherTags);
+    imageArray.map((img, i) => formData.append("images", imageArray[i]));
+
+    axios
+      .post("http://localhost:3000/api/v1/products", formData)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
   function handleSelectFile(e) {
     const selectedFiles = e.target.files;
     const selectedFilesArray = Array.from(selectedFiles);
@@ -57,28 +84,16 @@ function AddItem() {
   }
 
   function onSubmit(data) {
-    const formData = new FormData();
-    // console.log(data);
-    // console.log(formData);
-    formData.append("name", data.name);
-    formData.append("price", data.price);
-    formData.append("description", data.description);
-    formData.append("genderTag", data.genderTag);
-    formData.append("bodyTag", data.bodyTag);
-    formData.append("otherTags", tags);
-    selectedImagesNames.map((img, i) =>
-      formData.append("images", selectedImagesNames[i])
+    createItem(
+      data.name,
+      data.price,
+      data.description,
+      data.genderTag,
+      data.bodyTag,
+      tags,
+      selectedImagesNames
     );
-    // formData.append("images", selectedImagesNames[0]);
-    // formData.append("images", selectedImagesNames[1]);
-    // formData.append("images", selectedImagesNames[2]);
-    // formData.append("images", selectedImagesNames[3]);
-
-    // console.log(selectedImagesNames);
-    axios
-      .post("http://localhost:3000/api/v1/products", formData)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    onCloseModal?.();
   }
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -147,19 +162,19 @@ function AddItem() {
           <option value="feet">Feet</option>
         </RealSelect>
         {/* <Select
-          id="bodyTag"
-          // {...register("bodyTag", {
-          //   required: "This field is required",
-          // })}
-          options={[
-            { value: "head", label: "Head wear" },
-            { value: "body", label: "Body wear" },
-            { value: "legs", label: "Leg wear" },
-            { value: "feet", label: "Feet wear" },
-          ]}
-        /> */}
+            id="bodyTag"
+            // {...register("bodyTag", {
+            //   required: "This field is required",
+            // })}
+            options={[
+              { value: "head", label: "Head wear" },
+              { value: "body", label: "Body wear" },
+              { value: "legs", label: "Leg wear" },
+              { value: "feet", label: "Feet wear" },
+            ]}
+          /> */}
       </FormRow>
-      <FormRow label="Other tags">
+      <FormRow label="Other tags" error={errors?.name?.message}>
         <AddTagComponentUI
           tags={tags}
           onAddtags={handleAddItems}
@@ -168,16 +183,16 @@ function AddItem() {
         />
       </FormRow>
       {/* <Input
-        type="hidden"
-        id="otherTags"
-        value={test}
-        {...register("otherTags")}
-      /> */}
+          type="hidden"
+          id="otherTags"
+          value={test}
+          {...register("otherTags")}
+        /> */}
       <FormRow>
         <Button
           variation="secondary"
           type="reset"
-          // onClick={() => onCloseModal?.()}
+          onClick={() => onCloseModal?.()}
         >
           Cancel
         </Button>
@@ -187,4 +202,4 @@ function AddItem() {
   );
 }
 
-export default AddItem;
+export default CreateItemFormTest;

@@ -11,7 +11,6 @@ import isPropValid from "@emotion/is-prop-valid";
 import Showcase from "./pages/Showcase";
 import Signup from "./pages/Signup";
 import Item from "./pages/Item";
-import AddItem from "./pages/AddItem";
 // import AppLayout from "./ui/AppLayout";
 
 const queryClient = new QueryClient({
@@ -48,7 +47,6 @@ function App() {
               </Route>
               {/* <Route element={<Navigate replace to="login" />}></Route> */}
               {/* <Route path="login" element={<Login />}></Route> */}
-              <Route path="addItem" element={<AddItem />}></Route>
               <Route path="login" element={<Login />}></Route>
               <Route path="signup" element={<Signup />}></Route>
               <Route path="*" element={<PageNotFound />}></Route>

@@ -2,7 +2,9 @@ import styled from "styled-components";
 import Logout from "./Logout";
 import Button from "../../ui/Button";
 import AddItem from "../items/AddItem";
-
+import { LiaShoppingBagSolid } from "react-icons/lia";
+import ButtonIcon from "../../ui/ButtonIcon";
+import OrderMenu from "../orders/OrderMenu";
 const StyledUserProfile = styled.div`
   display: flex;
   gap: 1.2rem;
@@ -31,6 +33,7 @@ function UserProfile() {
   return (
     <StyledUserProfile>
       {role === "admin" && <AddItem />}
+      {role === "user" && <OrderMenu />}
       <Avatar src={"default-user.jpg"} alt="Avatar" />
       <span>Sample name</span>
       {user && <Logout />}
