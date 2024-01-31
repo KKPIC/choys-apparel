@@ -64,21 +64,23 @@ function ItemDataBox({
 }) {
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [deleteId, setDeleteId] = useState("");
   const userID = localStorage.getItem("id");
   // let prodId = productID;
   let qnty = quantity;
   // let itemPrice = price;
   let totalPrice = itemPrice * quantity;
-  console.log(productId);
+  // console.log(productId);
   useEffect(() => {
     axios
       .get(
         `http://localhost:3000/api/v1/carts?product=${productId}&user=${userID}`
       )
       .then((res) => {
-        // setTest(res.data.data.data);
-        console.log(res.data.data.data[0].inCart);
+        // console.log(res.data.data.data[0]._id);
         setAddedToCart(res.data.data.data[0].inCart);
+        setDeleteId(res.data.data.data[0]._id);
+        console.log(res.data.data.data[0]._id);
       })
       .catch((error) => {
         console.log(error);
@@ -103,6 +105,15 @@ function ItemDataBox({
       .catch((err) => console.log(err));
 
     setAddedToCart((e) => !e);
+  }
+  function handleDeleteCart() {
+    axios
+      .delete(`http://localhost:3000/api/v1/carts/${deleteId}`)
+      .then((res) => {
+        console.log(res);
+        setAddedToCart(false);
+      })
+      .catch((err) => console.log(err));
   }
   function handleDeducQuantity() {
     quantity > 1 ? setQuantity((e) => e - 1) : setQuantity(1);
@@ -131,6 +142,7 @@ function ItemDataBox({
           onDeduc={handleDeducQuantity}
           onAdd={handleAddQuantity}
           onOrderItem={handleOrderItem}
+          onDeleteCart={handleDeleteCart}
         />
       </RightSideBox>
     </StyledItemDataBox>

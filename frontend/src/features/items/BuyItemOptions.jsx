@@ -55,6 +55,7 @@ function BuyItemOptions({
   onDeduc,
   onAdd,
   onOrderItem,
+  onDeleteCart,
 }) {
   return (
     <StyledBuyOptions>
@@ -74,11 +75,7 @@ function BuyItemOptions({
       )}
       {addedTocart && (
         <EditButtons>
-          <Button
-            variation="secondary"
-            sizes="medium"
-            // onClick={() => setAddedToCart((e) => !e)}
-          >
+          <Button variation="secondary" sizes="medium" onClick={onDeleteCart}>
             Remove from cart
           </Button>
         </EditButtons>
