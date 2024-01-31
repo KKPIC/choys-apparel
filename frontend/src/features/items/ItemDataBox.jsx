@@ -1,16 +1,11 @@
 import styled from "styled-components";
-import { RiShoppingBag3Line } from "react-icons/ri";
-import ButtonIcon from "../../ui/ButtonIcon";
-import { FaChevronLeft } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa";
-import { FaAngleLeft } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+
 import StarRating from "../../ui/StarRating";
-import Button from "../../ui/Button";
-import Empty from "../../ui/Empty";
-import ItemImageBox from "./ItemImageBox";
+
 import axios from "axios";
-import { useState } from "react";
+import ItemImageBox from "./ItemImageBox";
+import { useEffect, useState } from "react";
+import BuyItemOptions from "./BuyItemOptions";
 const StyledItemDataBox = styled.section`
   /* Box */
   display: flex;
@@ -43,62 +38,24 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
+
+const SaleBox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
 const PriceBox = styled.div`
   display: flex;
   flex-direction: column;
   align-content: flex-start;
 `;
 const DiscountedPrice = styled.h2``;
-const SaleBox = styled.div`
-  display: flex;
-  justify-content: flex-start;
-`;
-const OriginalPrice = styled.h4`
-  text-decoration: line-through;
-`;
-const SalePercent = styled.p`
-  padding-left: 2px;
-  font-size: 12px;
-  color: red;
-`;
-const BuyOptions = styled.div`
-  gap: 0.2em;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-`;
-const EditButtons = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 2rem;
-`;
 
-const CircleButton = styled.button`
-  height: 60px;
-  width: 60px;
-
-  color: var(--color-grey-600);
-  background: var(--color-grey-0);
-  border: 1px solid var(--color-grey-200);
-
-  &:hover {
-    background-color: var(--color-grey-50);
-  }
-  border-radius: 50%;
-  display: inline-block;
-`;
-const QuantityValue = styled.h1`
-  padding: 1.1rem;
-  font-size: 26px;
-`;
 function ItemDataBox({
   item: {
-    productID,
+    _id: productId,
     name,
     description,
-    price,
+    price: itemPrice,
     images,
     genderTag,
     bodyTag,
@@ -108,11 +65,43 @@ function ItemDataBox({
   const [quantity, setQuantity] = useState(1);
   const [addedToCart, setAddedToCart] = useState(false);
   const userID = localStorage.getItem("id");
+  // let prodId = productID;
+  let qnty = quantity;
+  // let itemPrice = price;
+  let totalPrice = itemPrice * quantity;
+  console.log(productId);
+  useEffect(() => {
+    axios
+      .get(
+        `http://localhost:3000/api/v1/carts?product=${productId}&user=${userID}`
+      )
+      .then((res) => {
+        // setTest(res.data.data.data);
+        console.log(res.data.data.data[0].inCart);
+        setAddedToCart(res.data.data.data[0].inCart);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [productId, userID, addedToCart]);
   function handleOrderItem() {
-    // axios
-    //   .post("http://localhost:3000/api/v1/products", { productID, userID })
-    //   .then((res) => console.log(res))
-    //   .catch((err) => console.log(err));
+    // const formData = new FormData();
+    // formData.append("product", productID);
+    // formData.append("user", userID);
+    // formData.append("quantity", quantity);
+    // formData.append("price", price);
+    // formData.append("totalPrice", totalPrice);
+    axios
+      .post("http://localhost:3000/api/v1/carts", {
+        product: productId,
+        user: userID,
+        quantity: qnty,
+        price: itemPrice,
+        totalPrice: totalPrice,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+
     setAddedToCart((e) => !e);
   }
   function handleDeducQuantity() {
@@ -130,41 +119,19 @@ function ItemDataBox({
         <Description>{description}</Description>
         <StarRating maxRating={5} size={24} />
         <PriceBox>
-          <DiscountedPrice>₱{price}.00</DiscountedPrice>
+          <DiscountedPrice>₱{itemPrice}.00</DiscountedPrice>
           {/* <SaleBox>
             <OriginalPrice>₱900.00</OriginalPrice>
             <SalePercent>-50%</SalePercent>
           </SaleBox> */}
         </PriceBox>
-        <BuyOptions>
-          {!addedToCart && (
-            <Button
-              variation="secondary"
-              sizes="large"
-              onClick={handleOrderItem}
-            >
-              ADD TO CART
-            </Button>
-          )}
-          {addedToCart && (
-            <EditButtons>
-              <CircleButton onClick={handleDeducQuantity}>
-                <FaAngleLeft />
-              </CircleButton>
-              <QuantityValue>{quantity}</QuantityValue>
-              <CircleButton onClick={handleAddQuantity}>
-                <FaAngleRight />
-              </CircleButton>
-              <Button
-                variation="secondary"
-                sizes="medium"
-                onClick={() => setAddedToCart((e) => !e)}
-              >
-                Remove
-              </Button>
-            </EditButtons>
-          )}
-        </BuyOptions>
+        <BuyItemOptions
+          quantity={quantity}
+          addedTocart={addedToCart}
+          onDeduc={handleDeducQuantity}
+          onAdd={handleAddQuantity}
+          onOrderItem={handleOrderItem}
+        />
       </RightSideBox>
     </StyledItemDataBox>
   );

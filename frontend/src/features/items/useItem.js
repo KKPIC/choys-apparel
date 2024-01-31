@@ -6,7 +6,7 @@ export function useItem() {
   const [test, setTest] = useState({});
   const [loading, setLoading] = useState(false);
   const { productId } = useParams();
-  console.log(productId);
+  // console.log(productId);
 
   useEffect(() => {
     setLoading(true);
@@ -14,7 +14,7 @@ export function useItem() {
       .get(`http://localhost:3000/api/v1/products/${productId}`)
       .then((res) => {
         setTest(res.data.data.data);
-        console.log(res.data.data.data);
+        // console.log(res.data.data.data);
         setLoading(false);
       })
       .catch((error) => {

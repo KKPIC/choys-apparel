@@ -12,8 +12,8 @@ function ItemDetail() {
   if (!test) return <Empty resourceName="test" />;
 
   const { name, _id } = test;
-  console.log(name);
-  console.log(test);
+  // console.log(name);
+  // console.log(test);
   return (
     <>
       <ItemDataBox item={test} loading={loading} key={_id} />;
