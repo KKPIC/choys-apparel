@@ -75,7 +75,7 @@ function BuyItemOptions({
       )}
       {addedTocart && (
         <EditButtons>
-          <Button variation="secondary" sizes="medium" onClick={onDeleteCart}>
+          <Button variation="danger" sizes="medium" onClick={onDeleteCart}>
             Remove from cart
           </Button>
         </EditButtons>

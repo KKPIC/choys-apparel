@@ -6,6 +6,7 @@ import axios from "axios";
 import ItemImageBox from "./ItemImageBox";
 import { useEffect, useState } from "react";
 import BuyItemOptions from "./BuyItemOptions";
+import Button from "../../ui/Button";
 const StyledItemDataBox = styled.section`
   /* Box */
   display: flex;
@@ -66,6 +67,7 @@ function ItemDataBox({
   const [addedToCart, setAddedToCart] = useState(false);
   const [deleteId, setDeleteId] = useState("");
   const userID = localStorage.getItem("id");
+  const role = localStorage.getItem("role");
   // let prodId = productID;
   let qnty = quantity;
   // let itemPrice = price;
@@ -136,14 +138,18 @@ function ItemDataBox({
             <SalePercent>-50%</SalePercent>
           </SaleBox> */}
         </PriceBox>
-        <BuyItemOptions
-          quantity={quantity}
-          addedTocart={addedToCart}
-          onDeduc={handleDeducQuantity}
-          onAdd={handleAddQuantity}
-          onOrderItem={handleOrderItem}
-          onDeleteCart={handleDeleteCart}
-        />
+        {role === "admin" ? (
+          <Button variation="secondary">Edit</Button>
+        ) : (
+          <BuyItemOptions
+            quantity={quantity}
+            addedTocart={addedToCart}
+            onDeduc={handleDeducQuantity}
+            onAdd={handleAddQuantity}
+            onOrderItem={handleOrderItem}
+            onDeleteCart={handleDeleteCart}
+          />
+        )}
       </RightSideBox>
     </StyledItemDataBox>
   );

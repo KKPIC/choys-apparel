@@ -33,7 +33,14 @@ export async function login({ email, password }) {
 }
 
 export async function logout() {
+  const { data, error } = await axios.get(
+    `http://localhost:3000/api/v1/users/logout`
+  );
   localStorage.removeItem("token");
   localStorage.removeItem("role");
   localStorage.removeItem("id");
+
+  if (error) throw new Error(error.message);
+
+  return data;
 }
