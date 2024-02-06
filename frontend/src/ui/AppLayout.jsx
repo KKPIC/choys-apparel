@@ -15,9 +15,12 @@ const StyledAppLayout = styled.div`
 //   gap: 0.4rem;
 // `;
 const Main = styled.main`
+  background-color: var(--color-grey-50);
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  height: 100vh;
   /* background-color: var(--color-grey-50); */
   /* overflow: scroll; */
   /* will only scroll the element that has the overflow scroll property */

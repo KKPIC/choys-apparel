@@ -5,6 +5,7 @@ import AddItem from "../items/AddItem";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import ButtonIcon from "../../ui/ButtonIcon";
 import CartMenu from "../carts/CartMenu";
+import toast from "react-hot-toast";
 const StyledUserProfile = styled.div`
   display: flex;
   gap: 1.2rem;
@@ -34,8 +35,14 @@ function UserProfile() {
     <StyledUserProfile>
       {role === "admin" && <AddItem />}
       {role === "user" && <CartMenu />}
-      <Avatar src={"default-user.jpg"} alt="Avatar" />
-      <span>Sample name</span>
+      <Avatar
+        src={"default-user.jpg"}
+        alt="Avatar"
+        onClick={() => toast("In development.", { icon: "⚒" })}
+      />
+      <span onClick={() => toast("In development.", { icon: "⚒" })}>
+        Sample name
+      </span>
       {user && <Logout />}
     </StyledUserProfile>
   );

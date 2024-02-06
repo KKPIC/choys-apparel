@@ -16,7 +16,7 @@ function ItemDetail() {
   // console.log(test);
   return (
     <>
-      <ItemDataBox item={test} loading={loading} key={_id} />;
+      <ItemDataBox item={test} loading={loading} key={_id} />
     </>
   );
 }

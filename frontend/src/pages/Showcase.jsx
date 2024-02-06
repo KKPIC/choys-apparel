@@ -11,12 +11,17 @@ import Pagination from "../ui/Pagination";
 
 const StyledTop = styled.ul``;
 const StyledShowcase = styled.ul`
-  border: 2px solid var(--color-grey-200);
+  /* border: 2px solid var(--color-grey-200);
   border-radius: var(--border-radius-md);
-  background-color: var(--color-grey-200);
+  background-color: var(--color-grey-200); */
+  border: 1px solid var(--color-grey-100);
+  background-color: var(--color-grey-0);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 3.2rem 4rem;
+  transition: all 0.5s;
 
   max-width: 60%;
-  padding: 1.5rem;
   margin: 1rem auto;
   gap: 0.3em;
   grid-template-columns: auto auto auto auto;

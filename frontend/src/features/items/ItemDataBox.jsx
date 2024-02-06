@@ -7,6 +7,7 @@ import ItemImageBox from "./ItemImageBox";
 import { useEffect, useState } from "react";
 import BuyItemOptions from "./BuyItemOptions";
 import Button from "../../ui/Button";
+import toast from "react-hot-toast";
 const StyledItemDataBox = styled.section`
   /* Box */
   display: flex;
@@ -15,11 +16,14 @@ const StyledItemDataBox = styled.section`
   justify-content: space-around;
   max-width: 900px;
   margin: 0 auto;
-  background-color: var(--color-grey-50);
+  margin-top: 9em;
   border: 1px solid var(--color-grey-100);
-  border-radius: var(--border-radius-md);
-
+  background-color: var(--color-grey-0);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
 `;
 
 const LeftSideBox = styled.div`
@@ -64,7 +68,7 @@ function ItemDataBox({
   },
 }) {
   const [quantity, setQuantity] = useState(1);
-  const [addedToCart, setAddedToCart] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(null);
   const [deleteId, setDeleteId] = useState("");
   const userID = localStorage.getItem("id");
   const role = localStorage.getItem("role");
@@ -82,12 +86,12 @@ function ItemDataBox({
         // console.log(res.data.data.data[0]._id);
         setAddedToCart(res.data.data.data[0].inCart);
         setDeleteId(res.data.data.data[0]._id);
-        console.log(res.data.data.data[0]._id);
+        console.log(res.data.data.data[0].inCart);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [productId, userID, addedToCart]);
+  }, [productId, userID, addedToCart, setAddedToCart]);
   function handleOrderItem() {
     // const formData = new FormData();
     // formData.append("product", productID);
@@ -139,7 +143,12 @@ function ItemDataBox({
           </SaleBox> */}
         </PriceBox>
         {role === "admin" ? (
-          <Button variation="secondary">Edit</Button>
+          <Button
+            variation="secondary"
+            onClick={() => toast("In development.", { icon: "⚒" })}
+          >
+            Edit
+          </Button>
         ) : (
           <BuyItemOptions
             quantity={quantity}

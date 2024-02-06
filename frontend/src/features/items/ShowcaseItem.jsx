@@ -1,20 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const StyledList = styled.li`
-  border: 2px solid var(--color-grey-500);
+  /* border: 2px solid var(--color-grey-500); */
+  border: 1px solid var(--color-grey-100);
+  background-color: var(--color-grey-0);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
   text-align: center;
   list-style-type: none;
-  /* padding: 7.2rem; */
+  padding: 0.5rem;
 
   &:hover {
     border: 3px groove var(--color-grey-900);
     cursor: pointer;
     padding: 0.5em;
     border-color: blanchedalmond;
-    background-color: var(--color-grey-300);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--color-grey-100);
   }
 `;
 const StyledImg = styled.img`
+  border-radius: var(--border-radius-sm);
   width: 222px;
   height: 200px;
   object-fit: cover;

@@ -6,7 +6,7 @@ function AddItem() {
     <div>
       <Modal>
         <Modal.Open opens="item-form">
-          <Button>Add new Item</Button>
+          <Button variation="green">Add new Item</Button>
         </Modal.Open>
         <Modal.Window name="item-form">
           <CreateItemForm />
